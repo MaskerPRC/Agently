@@ -105,7 +105,7 @@ class OpenAI(RequestABC):
                     prompt_dict["[OUTPUT REQUIERMENT]"] = str(prompt_output_data)
             prompt_text = to_prompt_structure(prompt_dict, end="[OUTPUT]:\n")
         # --- for vision model
-        if self.request_type == "vision" and files_data:
+        if files_data:
             content = []
             content.append({ "type": "text", "text": prompt_text })
             for image_content in files_data:
